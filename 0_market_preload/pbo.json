@@ -1,0 +1,14 @@
+{
+    "compress": {
+        "exclude": [
+        ],
+        "include": [
+        ]
+    },
+    "headers": [
+        {
+            "name": "prefix",
+            "value": "0_DayZExpansion_Market_Preload"
+        }
+    ]
+}

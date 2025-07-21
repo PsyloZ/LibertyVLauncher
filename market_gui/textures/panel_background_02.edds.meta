@@ -1,0 +1,16 @@
+MetaFileClass {
+ Name "{022593E4D038D194}DayZExpansion/Market/GUI/textures/panel_background_02.edds"
+ Author "Steve aka Salutesh"
+ ChangeDate -616764692
+ Configurations {
+  TGAResourceClass PC {
+   SourceFile "panel_background_02.tga"
+  }
+  TGAResourceClass XBOX_ONE : PC {
+  }
+  TGAResourceClass PS4 : PC {
+  }
+  TGAResourceClass LINUX : PC {
+  }
+ }
+}

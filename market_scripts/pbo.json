@@ -1,0 +1,15 @@
+{
+    "compress": {
+        "exclude": [
+        ],
+        "include": [
+            "\\.xml$"
+        ]
+    },
+    "headers": [
+        {
+            "name": "prefix",
+            "value": "DayZExpansion\\Market\\Scripts"
+        }
+    ]
+}

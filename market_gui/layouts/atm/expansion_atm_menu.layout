@@ -1,0 +1,1353 @@
+FrameWidgetClass ExpansionATMMenu {
+ ignorepointer 1
+ size 1 1
+ halign center_ref
+ valign center_ref
+ hexactpos 0
+ vexactpos 0
+ hexactsize 0
+ vexactsize 0
+ scriptclass "ExpansionATMMenuController"
+ {
+  GridSpacerWidgetClass atm_grid {
+   ignorepointer 1
+   position 0 0
+   size 900 380
+   halign center_ref
+   valign center_ref
+   hexactpos 0
+   vexactpos 0
+   hexactsize 1
+   vexactsize 1
+   "Size To Content H" 1
+   "Size To Content V" 1
+   Rows 1
+   {
+    GridSpacerWidgetClass atm_root {
+     visible 1
+     ignorepointer 1
+     size 450 380
+     halign center_ref
+     valign center_ref
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 3
+     Padding 0
+     Margin 0
+     "Size To Content V" 1
+     Columns 1
+     Rows 2
+     {
+      ImageWidgetClass atm_header {
+       ignorepointer 1
+       color 0 0 0 0.8627
+       position 0 0
+       size 1 36
+       hexactpos 1
+       vexactpos 1
+       hexactsize 0
+       vexactsize 1
+       image0 "set:dayz_gui image:inv_header_2"
+       mode blend
+       "src alpha" 1
+       "clamp mode" wrap
+       "stretch mode" stretch_w_h
+       {
+        TextWidgetClass atm_text {
+         ignorepointer 1
+         position 0 0
+         size 1 1
+         valign center_ref
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         style Normal
+         text "#STR_EXPANSION_ATM_UI_PERSONAL_ACCOUNT"
+         font "gui/fonts/sdf_metronbook24"
+         "bold text" 1
+         "exact text" 1
+         "exact text size" 22
+         "text halign" center
+         "text valign" center
+        }
+       }
+      }
+      GridSpacerWidgetClass atm_content {
+       ignorepointer 1
+       color 0 0 0 0.549
+       position 0 36
+       size 1 0
+       hexactpos 1
+       vexactpos 1
+       hexactsize 0
+       vexactsize 1
+       style Colorable
+       Padding 4
+       Margin 6
+       "Size To Content V" 1
+       Columns 1
+       Rows 5
+       {
+        FrameWidgetClass Max {
+         ignorepointer 1
+         position 0 0
+         size 48 24
+         hexactpos 1
+         vexactpos 1
+         hexactsize 1
+         vexactsize 1
+         {
+          TextWidgetClass MaxLabel {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           text "#STR_EXPANSION_ATM_UI_MAXDEPOSIT"
+           font "gui/fonts/sdf_metronbook24"
+           "bold text" 1
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+          }
+          TextWidgetClass MaxValue {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           halign right_ref
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           scriptclass "ViewBinding"
+           font "gui/fonts/sdf_metronlight24"
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+           {
+            ScriptParamsClass {
+             Binding_Name "MaxValue"
+            }
+           }
+          }
+         }
+        }
+        FrameWidgetClass MoneyDeposit {
+         ignorepointer 1
+         position 0 0
+         size 48 24
+         hexactpos 1
+         vexactpos 1
+         hexactsize 1
+         vexactsize 1
+         {
+          TextWidgetClass MoneyDepositLabel {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           text "#STR_EXPANSION_ATM_UI_MONEY_ACCOUNT"
+           font "gui/fonts/sdf_metronbook24"
+           "bold text" 1
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+          }
+          TextWidgetClass MoneyDepositValue {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           halign right_ref
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           scriptclass "ViewBinding"
+           font "gui/fonts/sdf_metronlight24"
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+           {
+            ScriptParamsClass {
+             Binding_Name "MoneyDepositValue"
+            }
+           }
+          }
+         }
+        }
+        FrameWidgetClass PlayerMoney {
+         ignorepointer 1
+         position 0 0
+         size 48 24
+         hexactpos 1
+         vexactpos 1
+         hexactsize 1
+         vexactsize 1
+         {
+          TextWidgetClass PlayerMoneyLabel {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           text "#STR_EXPANSION_ATM_UI_MONEY_INVENTORY"
+           font "gui/fonts/sdf_metronbook24"
+           "bold text" 1
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+          }
+          TextWidgetClass PlayerMoneyValue {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           halign right_ref
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           scriptclass "ViewBinding"
+           font "gui/fonts/sdf_metronlight24"
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+           {
+            ScriptParamsClass {
+             Binding_Name "PlayerMoneyValue"
+            }
+           }
+          }
+         }
+        }
+        PanelWidgetClass atm_separator {
+         ignorepointer 1
+         position 10 10
+         size 1 2
+         hexactpos 1
+         vexactpos 1
+         hexactsize 0
+         vexactsize 1
+         style rover_sim_colorable
+        }
+        PanelWidgetClass Spacer {
+         ignorepointer 1
+         position 0 0
+         size 48 24
+         hexactpos 1
+         vexactpos 1
+         hexactsize 1
+         vexactsize 1
+        }
+        FrameWidgetClass Amount {
+         clipchildren 1
+         ignorepointer 0
+         position 0 0
+         size 48 24
+         hexactpos 1
+         vexactpos 1
+         hexactsize 1
+         vexactsize 1
+         {
+          PanelWidgetClass AmountBackground {
+           visible 1
+           ignorepointer 1
+           color 0.1412 0.1412 0.1412 0.549
+           position 0 0
+           size 1 1
+           halign right_ref
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           style DayZDefaultPanel
+          }
+          TextWidgetClass AmountLabel {
+           ignorepointer 1
+           size 1 1
+           valign center_ref
+           hexactpos 0
+           vexactpos 1
+           hexactsize 0
+           vexactsize 0
+           text "#STR_EXPANSION_ATM_UI_AMOUNT"
+           font "gui/fonts/sdf_metronbook24"
+           "bold text" 1
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+          }
+          EditBoxWidgetClass AmountValue {
+           clipchildren 1
+           ignorepointer 0
+           position 0.02 0
+           size 0.75 32
+           halign right_ref
+           valign center_ref
+           hexactpos 0
+           vexactpos 1
+           hexactsize 0
+           vexactsize 1
+           scriptclass ""
+           style ServerBrowser
+           "Use default text" 0
+           "exact text" 1
+           font "gui/fonts/sdf_metronlight24"
+          }
+         }
+        }
+        GridSpacerWidgetClass ButtonsPanel {
+         ignorepointer 1
+         color 0.1412 0.1412 0.1412 0.549
+         position 0 0
+         size 1 24
+         hexactpos 1
+         vexactpos 1
+         hexactsize 0
+         vexactsize 1
+         style Expansion_01
+         "Size To Content H" 1
+         "Size To Content V" 1
+         Columns 2
+         Rows 2
+         {
+          ButtonWidgetClass ButtonWithdraw {
+           color 0.8863 0.2549 0.2588 0.7843
+           position 0 0
+           size 0.49 24
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 1
+           scriptclass "ViewBinding"
+           style Expansion_01
+           {
+            TextWidgetClass ButtonWithdrawLabel {
+             ignorepointer 1
+             position 0 0
+             size 1 24
+             hexactpos 0
+             vexactpos 0
+             hexactsize 0
+             vexactsize 1
+             priority 1
+             text "#STR_EXPANSION_ATM_UI_WITHDRAW"
+             font "gui/fonts/sdf_metronbook24"
+             "bold text" 1
+             "exact text" 1
+             "exact text size" 22
+             "text halign" center
+             "text valign" center
+            }
+           }
+           {
+            ScriptParamsClass {
+             Relay_Command "OnWithdrawButtonClick"
+            }
+           }
+          }
+          ButtonWidgetClass ButtonDeposit {
+           color 0.1804 0.8 0.4431 0.7843
+           position 0 0
+           size 0.49 24
+           halign right_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 1
+           scriptclass "ViewBinding"
+           style Expansion_01
+           {
+            TextWidgetClass ButtonDepositLabel {
+             ignorepointer 1
+             position 0 0
+             size 1 24
+             hexactpos 0
+             vexactpos 0
+             hexactsize 0
+             vexactsize 1
+             priority 1
+             text "#STR_EXPANSION_ATM_UI_DEPOSIT"
+             font "gui/fonts/sdf_metronbook24"
+             "bold text" 1
+             "exact text" 1
+             "exact text size" 22
+             "text halign" center
+             "text valign" center
+            }
+           }
+           {
+            ScriptParamsClass {
+             Relay_Command "OnDepositButtonClick"
+            }
+           }
+          }
+          ButtonWidgetClass ButtonWithdrawAll {
+           color 0.8863 0.2549 0.2588 0.7843
+           position 0 0
+           size 0.49 24
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 1
+           scriptclass "ViewBinding"
+           style Expansion_01
+           {
+            TextWidgetClass ButtonWithdrawAllLabel {
+             ignorepointer 1
+             position 0 0
+             size 1 24
+             hexactpos 0
+             vexactpos 0
+             hexactsize 0
+             vexactsize 1
+             priority 1
+             text "#STR_EXPANSION_ATM_UI_WITHDRAW_ALL"
+             font "gui/fonts/sdf_metronbook24"
+             "bold text" 1
+             "exact text" 1
+             "exact text size" 22
+             "text halign" center
+             "text valign" center
+            }
+           }
+           {
+            ScriptParamsClass {
+             Relay_Command "OnWithdrawAllButtonClick"
+            }
+           }
+          }
+          ButtonWidgetClass ButtonDepositAll {
+           color 0.1804 0.8 0.4431 0.7843
+           position 0 0
+           size 0.49 24
+           halign right_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 1
+           scriptclass "ViewBinding"
+           style Expansion_01
+           {
+            TextWidgetClass ButtonDepositAllLabel {
+             ignorepointer 1
+             position 0 0
+             size 1 24
+             hexactpos 0
+             vexactpos 0
+             hexactsize 0
+             vexactsize 1
+             priority 1
+             text "#STR_EXPANSION_ATM_UI_DEPOSIT_ALL"
+             font "gui/fonts/sdf_metronbook24"
+             "bold text" 1
+             "exact text" 1
+             "exact text size" 22
+             "text halign" center
+             "text valign" center
+            }
+           }
+           {
+            ScriptParamsClass {
+             Relay_Command "OnDepositAllButtonClick"
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+    GridSpacerWidgetClass atm_transfer {
+     visible 1
+     ignorepointer 1
+     size 450 380
+     halign center_ref
+     valign center_ref
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 3
+     Padding 0
+     Margin 0
+     "Size To Content V" 1
+     Columns 1
+     Rows 2
+     {
+      ImageWidgetClass atm_transfer_header {
+       ignorepointer 1
+       color 0 0 0 0.8627
+       position 0 0
+       size 1 36
+       hexactpos 1
+       vexactpos 1
+       hexactsize 0
+       vexactsize 1
+       image0 "set:dayz_gui image:inv_header_2"
+       mode blend
+       "src alpha" 1
+       "clamp mode" wrap
+       "stretch mode" stretch_w_h
+       {
+        TextWidgetClass atm_transfer_text {
+         ignorepointer 1
+         position 0 0
+         size 1 1
+         valign center_ref
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         style Normal
+         text "#STR_EXPANSION_ATM_UI_PLAYERS"
+         font "gui/fonts/sdf_metronbook24"
+         "bold text" 1
+         "exact text" 1
+         "exact text size" 22
+         "text halign" center
+         "text valign" center
+        }
+       }
+      }
+      GridSpacerWidgetClass atm_transfer_content {
+       visible 1
+       ignorepointer 1
+       color 0 0 0 0.549
+       position 0 36
+       size 1 0
+       hexactpos 1
+       vexactpos 1
+       hexactsize 0
+       vexactsize 1
+       style Colorable
+       Padding 4
+       Margin 6
+       "Size To Content V" 1
+       Columns 1
+       Rows 5
+       {
+        PanelWidgetClass atm_filter {
+         ignorepointer 1
+         position 0 0
+         size 1 30
+         hexactpos 1
+         vexactpos 1
+         hexactsize 0
+         vexactsize 1
+         {
+          PanelWidgetClass atm_filter_background {
+           visible 1
+           ignorepointer 1
+           color 0.1412 0.1412 0.1412 0.549
+           position 0 0
+           size 1 1
+           halign right_ref
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           style DayZDefaultPanel
+          }
+          EditBoxWidgetClass atm_filter_box {
+           position 0.0992 0
+           size 0.81245 1
+           halign right_ref
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           style ServerBrowser
+           text "#STR_EXPANSION_UPPERCASE_SEARCH"
+           "limit visible" 0
+           "Use default text" 1
+           "exact text" 1
+           font "gui/fonts/sdf_metronlight24"
+          }
+          ButtonWidgetClass atm_filter_clear {
+           position 0.02 0
+           size 26 26
+           halign right_ref
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 1
+           vexactsize 1
+           scaled 1
+           scriptclass "ViewBinding"
+           style Empty
+           {
+            ImageWidgetClass atm_filter_clear_icon {
+             visible 1
+             clipchildren 0
+             ignorepointer 1
+             color 0.9843 0.9882 0.9961 1
+             size 26 26
+             halign center_ref
+             valign center_ref
+             hexactpos 0
+             vexactpos 0
+             hexactsize 1
+             vexactsize 1
+             scriptclass ""
+             image0 ""
+             imageTexture "{50590D86B12E21D3}DayZExpansion/Core/GUI/icons/hud/refresh_64x64.edds"
+             mode blend
+             "src alpha" 1
+             "clamp mode" clamp
+             "stretch mode" stretch_w_h
+            }
+           }
+           {
+            ScriptParamsClass {
+             Relay_Command "OnFilterButtonClick"
+            }
+           }
+          }
+          ImageWidgetClass atm_filter_search_icon {
+           ignorepointer 1
+           color 0.8627 0.8627 0.8627 1
+           position 0.02 0
+           size 26 26
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 1
+           vexactsize 1
+           image0 ""
+           imageTexture "{0A37CC5D0C68964C}DayZExpansion/Core/GUI/icons/misc/T_Frying_Pan_256x256.edds"
+           mode blend
+           "src alpha" 1
+           "clamp mode" clamp
+           "stretch mode" stretch_w_h
+          }
+         }
+        }
+        ScrollWidgetClass atm_transfer_scroller {
+         ignorepointer 0
+         position 0 6
+         size 375 102
+         halign center_ref
+         hexactpos 1
+         vexactpos 1
+         hexactsize 1
+         vexactsize 1
+         style blank
+         "Scrollbar V" 1
+         {
+          WrapSpacerWidgetClass atm_transfer_scroller_content {
+           ignorepointer 0
+           color 0 0 0 0
+           position 0 0
+           size 375 101
+           hexactpos 1
+           vexactpos 1
+           hexactsize 1
+           vexactsize 1
+           scriptclass "ViewBinding"
+           Margin 0
+           "Size To Content V" 1
+           {
+            ScriptParamsClass {
+             Debug_Logging 0
+             Binding_Name "PlayerEntries"
+            }
+           }
+          }
+         }
+        }
+        PanelWidgetClass atm_transfer_separator {
+         ignorepointer 1
+         position 10 10
+         size 1 2
+         hexactpos 1
+         vexactpos 1
+         hexactsize 0
+         vexactsize 1
+         style rover_sim_colorable
+        }
+        GridSpacerWidgetClass TransferButtonsPanel {
+         ignorepointer 1
+         color 0.1412 0.1412 0.1412 0.549
+         position 0 0
+         size 1 24
+         hexactpos 1
+         vexactpos 1
+         hexactsize 0
+         vexactsize 1
+         style Expansion_01
+         "Size To Content H" 1
+         "Size To Content V" 1
+         content_halign center
+         content_valign center
+         Columns 1
+         Rows 2
+         {
+          ButtonWidgetClass ButtonTransfer {
+           color 0.1804 0.8 0.4431 0.7843
+           position 0 0
+           size 1 24
+           halign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 1
+           scriptclass "ViewBinding"
+           style Expansion_01
+           {
+            TextWidgetClass ButtonTransferLabel {
+             ignorepointer 1
+             size 1 24
+             hexactpos 1
+             vexactpos 1
+             hexactsize 0
+             vexactsize 1
+             priority 1
+             text "#STR_EXPANSION_ATM_UI_TRANSFER_PLAYER"
+             font "gui/fonts/sdf_metronbook24"
+             "bold text" 1
+             "exact text" 1
+             "exact text size" 22
+             "size to text h" 0
+             "text halign" center
+             "text valign" center
+            }
+           }
+           {
+            ScriptParamsClass {
+             Relay_Command "OnTransferButtonClick"
+            }
+           }
+          }
+          ButtonWidgetClass ButtonTransferAll {
+           color 0.1804 0.8 0.4431 0.7843
+           position 0 0
+           size 1 24
+           halign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 1
+           scriptclass "ViewBinding"
+           style Expansion_01
+           {
+            TextWidgetClass ButtonTransferAllLabel {
+             ignorepointer 1
+             size 1 24
+             hexactpos 1
+             vexactpos 1
+             hexactsize 0
+             vexactsize 1
+             priority 1
+             text "#STR_EXPANSION_ATM_UI_TRANSFER_ALL_PLAYER"
+             font "gui/fonts/sdf_metronbook24"
+             "bold text" 1
+             "exact text" 1
+             "exact text size" 22
+             "text halign" center
+             "text valign" center
+            }
+           }
+           {
+            ScriptParamsClass {
+             Relay_Command "OnTransferAllButtonClick"
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+    GridSpacerWidgetClass atm_party {
+     visible 0
+     ignorepointer 1
+     size 450 380
+     halign center_ref
+     valign center_ref
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     priority 3
+     Padding 0
+     Margin 0
+     "Size To Content V" 1
+     Columns 1
+     Rows 2
+     {
+      ImageWidgetClass atm_party_header {
+       ignorepointer 1
+       color 0 0 0 0.8627
+       position 0 0
+       size 1 36
+       hexactpos 1
+       vexactpos 1
+       hexactsize 0
+       vexactsize 1
+       image0 "set:dayz_gui image:inv_header_2"
+       mode blend
+       "src alpha" 1
+       "clamp mode" wrap
+       "stretch mode" stretch_w_h
+       {
+        TextWidgetClass atm_party_text {
+         ignorepointer 1
+         position 0 0
+         size 1 1
+         valign center_ref
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         style Normal
+         text "#STR_EXPANSION_ATM_UI_PARTY_ACCOUNT"
+         font "gui/fonts/sdf_metronbook24"
+         "bold text" 1
+         "exact text" 1
+         "exact text size" 22
+         "text halign" center
+         "text valign" center
+        }
+       }
+      }
+      GridSpacerWidgetClass atm_party_content {
+       ignorepointer 1
+       color 0 0 0 0.549
+       position 0 36
+       size 1 0
+       hexactpos 1
+       vexactpos 1
+       hexactsize 0
+       vexactsize 1
+       style Colorable
+       Padding 4
+       Margin 6
+       "Size To Content V" 1
+       Columns 1
+       Rows 5
+       {
+        FrameWidgetClass PartyName {
+         ignorepointer 1
+         position 0 0
+         size 48 24
+         hexactpos 1
+         vexactpos 1
+         hexactsize 1
+         vexactsize 1
+         {
+          TextWidgetClass PartyNameLabel {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           text "#STR_EXPANSION_ATM_UI_PARTY_NAME"
+           font "gui/fonts/sdf_metronbook24"
+           "bold text" 1
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+          }
+          TextWidgetClass PartyNameValue {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           halign right_ref
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           scriptclass "ViewBinding"
+           font "gui/fonts/sdf_metronlight24"
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+           {
+            ScriptParamsClass {
+             Binding_Name "PartyName"
+            }
+           }
+          }
+         }
+        }
+        FrameWidgetClass PartyID {
+         ignorepointer 1
+         position 0 0
+         size 48 24
+         hexactpos 1
+         vexactpos 1
+         hexactsize 1
+         vexactsize 1
+         {
+          TextWidgetClass PartyIDLabel {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           text "#STR_EXPANSION_ATM_UI_PARTY_ID"
+           font "gui/fonts/sdf_metronbook24"
+           "bold text" 1
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+          }
+          TextWidgetClass PartyIDValue {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           halign right_ref
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           scriptclass "ViewBinding"
+           font "gui/fonts/sdf_metronlight24"
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+           {
+            ScriptParamsClass {
+             Binding_Name "PartyID"
+            }
+           }
+          }
+         }
+        }
+        FrameWidgetClass PartyOwner {
+         ignorepointer 1
+         position 0 0
+         size 48 24
+         hexactpos 1
+         vexactpos 1
+         hexactsize 1
+         vexactsize 1
+         {
+          TextWidgetClass PartyOwnerLabel {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           text "#STR_EXPANSION_ATM_UI_PARTY_OWNER"
+           font "gui/fonts/sdf_metronbook24"
+           "bold text" 1
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+          }
+          TextWidgetClass PartyOwnerValue {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           halign right_ref
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           scriptclass "ViewBinding"
+           font "gui/fonts/sdf_metronlight24"
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+           {
+            ScriptParamsClass {
+             Binding_Name "PartyOwner"
+            }
+           }
+          }
+         }
+        }
+        FrameWidgetClass PartyMax {
+         ignorepointer 1
+         position 0 0
+         size 48 24
+         hexactpos 1
+         vexactpos 1
+         hexactsize 1
+         vexactsize 1
+         {
+          TextWidgetClass PartyMaxLabel {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           text "#STR_EXPANSION_ATM_UI_MAXDEPOSIT"
+           font "gui/fonts/sdf_metronbook24"
+           "bold text" 1
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+          }
+          TextWidgetClass PartyMaxValue {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           halign right_ref
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           scriptclass "ViewBinding"
+           font "gui/fonts/sdf_metronlight24"
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+           {
+            ScriptParamsClass {
+             Binding_Name "PartyMaxValue"
+            }
+           }
+          }
+         }
+        }
+        FrameWidgetClass PartyMoneyDeposit {
+         ignorepointer 1
+         position 0 0
+         size 48 24
+         hexactpos 1
+         vexactpos 1
+         hexactsize 1
+         vexactsize 1
+         {
+          TextWidgetClass PartyMoneyDepositLabel {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           text "#STR_EXPANSION_ATM_UI_MONEY_ACCOUNT"
+           font "gui/fonts/sdf_metronbook24"
+           "bold text" 1
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+          }
+          TextWidgetClass PartyMoneyDepositValue {
+           ignorepointer 1
+           position 0 0
+           size 1 1
+           halign right_ref
+           valign center_ref
+           hexactpos 0
+           vexactpos 0
+           hexactsize 0
+           vexactsize 0
+           scriptclass "ViewBinding"
+           font "gui/fonts/sdf_metronlight24"
+           "exact text" 1
+           "exact text size" 22
+           "size to text h" 1
+           "size to text v" 0
+           "text halign" center
+           "text valign" center
+           {
+            ScriptParamsClass {
+             Binding_Name "PartyMoneyDepositValue"
+            }
+           }
+          }
+         }
+        }
+        PanelWidgetClass atm_party_separator {
+         ignorepointer 1
+         position 10 10
+         size 1 2
+         hexactpos 1
+         vexactpos 1
+         hexactsize 0
+         vexactsize 1
+         style rover_sim_colorable
+        }
+        GridSpacerWidgetClass PartyButtonsPanel {
+         ignorepointer 1
+         color 0.1412 0.1412 0.1412 0.549
+         position 0 0
+         size 1 24
+         hexactpos 1
+         vexactpos 1
+         hexactsize 0
+         vexactsize 1
+         style Expansion_01
+         "Size To Content H" 1
+         "Size To Content V" 1
+         Columns 1
+         Rows 4
+         {
+          ButtonWidgetClass PartyButtonDeposit {
+           color 0.1804 0.8 0.4431 0.7843
+           size 1 24
+           halign right_ref
+           hexactpos 1
+           vexactpos 1
+           hexactsize 0
+           vexactsize 1
+           scriptclass "ViewBinding"
+           style Expansion_01
+           {
+            TextWidgetClass ButtonPartyDepositLabel {
+             ignorepointer 1
+             size 1 24
+             hexactpos 1
+             vexactpos 1
+             hexactsize 0
+             vexactsize 1
+             priority 1
+             text "#STR_EXPANSION_ATM_UI_TRANSFER_PARTY"
+             font "gui/fonts/sdf_metronbook24"
+             "bold text" 1
+             "exact text" 1
+             "exact text size" 22
+             "text halign" center
+             "text valign" center
+            }
+           }
+           {
+            ScriptParamsClass {
+             Relay_Command "OnTransferPartyButtonClick"
+            }
+           }
+          }
+          ButtonWidgetClass PartyButtonWithdraw {
+           visible 0
+           color 0.8863 0.2549 0.2588 0.7843
+           size 1 24
+           hexactpos 1
+           vexactpos 1
+           hexactsize 0
+           vexactsize 1
+           scriptclass "ViewBinding"
+           style Expansion_01
+           {
+            TextWidgetClass PartyButtonWithdrawLabel {
+             ignorepointer 1
+             size 1 24
+             hexactpos 1
+             vexactpos 1
+             hexactsize 0
+             vexactsize 1
+             priority 1
+             text "#STR_EXPANSION_ATM_UI_TRANSFER_YOU"
+             font "gui/fonts/sdf_metronbook24"
+             "bold text" 1
+             "exact text" 1
+             "exact text size" 22
+             "text halign" center
+             "text valign" center
+            }
+           }
+           {
+            ScriptParamsClass {
+             Relay_Command "OnWithdrawPartyButtonClick"
+            }
+           }
+          }
+          ButtonWidgetClass PartyButtonDepositAll {
+           color 0.1804 0.8 0.4431 0.7843
+           size 1 24
+           halign right_ref
+           hexactpos 1
+           vexactpos 1
+           hexactsize 0
+           vexactsize 1
+           scriptclass "ViewBinding"
+           style Expansion_01
+           {
+            TextWidgetClass ButtonPartyDepositAllLabel {
+             ignorepointer 1
+             size 1 24
+             hexactpos 1
+             vexactpos 1
+             hexactsize 0
+             vexactsize 1
+             priority 1
+             text "#STR_EXPANSION_ATM_UI_TRANSFER_ALL_PARTY"
+             font "gui/fonts/sdf_metronbook24"
+             "bold text" 1
+             "exact text" 1
+             "exact text size" 22
+             "text halign" center
+             "text valign" center
+            }
+           }
+           {
+            ScriptParamsClass {
+             Relay_Command "OnTransferAllPartyButtonClick"
+            }
+           }
+          }
+          ButtonWidgetClass PartyButtonWithdrawAll {
+           visible 0
+           color 0.8863 0.2549 0.2588 0.7843
+           size 1 24
+           hexactpos 1
+           vexactpos 1
+           hexactsize 0
+           vexactsize 1
+           scriptclass "ViewBinding"
+           style Expansion_01
+           {
+            TextWidgetClass PartyButtonWithdrawAllLabel {
+             ignorepointer 1
+             size 1 24
+             hexactpos 1
+             vexactpos 1
+             hexactsize 0
+             vexactsize 1
+             priority 1
+             text "#STR_EXPANSION_ATM_UI_TRANSFER_ALL_YOU"
+             font "gui/fonts/sdf_metronbook24"
+             "bold text" 1
+             "exact text" 1
+             "exact text size" 22
+             "text halign" center
+             "text valign" center
+            }
+           }
+           {
+            ScriptParamsClass {
+             Relay_Command "OnWithdrawAllPartyButtonClick"
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+  ImageWidgetClass atm_vignette {
+   visible 1
+   ignorepointer 1
+   color 0 0 0 0.7843
+   size 1.6 0.9
+   halign center_ref
+   valign center_ref
+   hexactpos 1
+   vexactpos 1
+   hexactsize 0
+   vexactsize 0
+   fixaspect outside
+   priority 1
+   imageTexture "{E6B3EF816E067499}Gui/textures/inventory_bgvignette.edds"
+   mode blend
+   "src alpha" 1
+   "clamp mode" clamp
+   "stretch mode" stretch_w_h
+   filter 0
+   nocache 1
+  }
+  TextWidgetClass atm_title {
+   ignorepointer 1
+   position 0.05 80
+   size 0.35 50
+   halign right_ref
+   hexactpos 0
+   vexactpos 1
+   hexactsize 0
+   vexactsize 1
+   priority 1
+   style Normal
+   text "#STR_EXPANSION_ATM_UI_TITLE"
+   font "gui/fonts/sdf_metronbook24"
+   "text color" 0.8157 0.1255 0.7843 1
+   "bold text" 1
+   "exact text" 0
+   "size to text h" 0
+   "size to text v" 1
+   "text halign" right
+   "text valign" center
+  }
+ }
+}
